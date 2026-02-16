@@ -3,6 +3,7 @@ services:
     build:
       context: ./client
       dockerfile: Dockerfile.dev
+    container_name: dev-client
     ports:
       - "5173:5173"
     volumes:
@@ -10,10 +11,12 @@ services:
       - node_modules_client:/app/node_modules
     environment:
       - CHOKIDAR_USEPOLLING=true
-      - WATCHPACK_POLLING=true
-
     stdin_open: true
     tty: true
+    networks: [dev]
+
+networks:
+  dev:
 
 volumes:
   node_modules_client:
