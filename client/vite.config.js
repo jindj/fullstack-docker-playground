@@ -6,7 +6,14 @@ export default defineConfig({
   plugins: [react()],
   cacheDir: "/tmp/vite-cache", // docker build optimize
   server: {
-    host: true, // équivalent à --host
+    host: true,
     port: 5173,
+    allowedHosts: ["client"],
+    proxy: {
+      "/api": {
+        target: "http://api:3000",
+        changeOrigin: true,
+      },
+    },
   },
 });
