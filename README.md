@@ -90,14 +90,12 @@ Recommandé : ouvrir le front via `http://localhost:8080`
 
 ######### Procédure (DEV) — Client + API + PostgreSQL
 
-## 1) Client (Vite React SWC)
-
-Créer le projet :
-
 ````bash
+## 1) Client (Vite React SWC)
+Créer le projet :
 npm create vite@latest client -- --template react-swc
 
-## 1) Client (Vite React SWC)
+## 2) Api (Npm Express)
 Créer le projet :
 ```bash
 cd api && npm init -y
